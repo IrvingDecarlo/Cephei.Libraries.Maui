@@ -17,28 +17,22 @@
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
-		<Title>Cephei Camera MAUI Libraries</Title>
+		<Title>Cephei Lottie Libraries</Title>
 		<Authors>Irving Decarlo</Authors>
 		<Company>Cephei</Company>
 		<Product>$(Title)</Product>
-		<PackageReleaseNotes>v1, 24-12-03
+		<PackageReleaseNotes>v1, 24-12-04
 Initial release.</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Camera.MAUI" Version="1.3.5" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+		<PackageReference Include="SkiaSharp.Extended.UI.Maui" Version="2.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="CameraView.xaml.cs">
-	    <DependentUpon>CameraView.xaml</DependentUpon>
-	  </Compile>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiXaml Update="CameraView.xaml">
+	  <MauiXaml Update="LoadingView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

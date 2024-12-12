@@ -13,6 +13,7 @@ public partial class LoadingView : ContentView
   public LoadingView()
   {
     InitializeComponent();
+    BindingContext = this;
   }
 
   #region public
@@ -41,78 +42,210 @@ public partial class LoadingView : ContentView
   /// </summary>
   public Style StyleTitle
   {
-    set => LabelTitle.Style = value;
-    get => LabelTitle.Style;
+    set => SetValue(StyleTitleProperty, value);
+    get => (Style)GetValue(StyleTitleProperty);
   }
+  /// <summary>
+  /// StyleTitle bindable property.
+  /// </summary>
+  public readonly BindableProperty StyleTitleProperty = BindableProperty.Create(nameof(StyleTitle), typeof(Style), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the text's style.
   /// </summary>
   public Style StyleText
   {
-    set => LabelDetail.Style = value;
-    get => LabelDetail.Style;
+    set => SetValue(StyleTextProperty, value);
+    get => (Style)GetValue(StyleTextProperty);
   }
+  /// <summary>
+  /// StyleText bindable property.
+  /// </summary>
+  public readonly BindableProperty StyleTextProperty = BindableProperty.Create(nameof(StyleText), typeof(Style), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the retry button's style.
   /// </summary>
   public Style StyleButton
   {
-    set => ButtonRetry.Style = value;
-    get => ButtonRetry.Style;
+    set => SetValue(StyleButtonProperty, value);
+    get => (Style)GetValue(StyleButtonProperty);
   }
+  /// <summary>
+  /// StyleButton bindable property.
+  /// </summary>
+  public readonly BindableProperty StyleButtonProperty = BindableProperty.Create(nameof(StyleButton), typeof(Style), typeof(LoadingView));
+
+  /// <summary>
+  /// Gets or sets the current lottie source.
+  /// </summary>
+  public SKLottieImageSource? LottieSource
+  {
+    set => SetValue(LottieSourceProperty, value);
+    get => GetValue(LottieSourceProperty) as SKLottieImageSource;
+  }
+  /// <summary>
+  /// LottieSource bindable property.
+  /// </summary>
+  public readonly BindableProperty LottieSourceProperty = BindableProperty.Create(nameof(LottieSource), typeof(SKLottieImageSource), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the image source for when the view is loading.
   /// </summary>
-  public SKLottieImageSource? LoadingLottieSource { get; set; }
+  public SKLottieImageSource? LoadingLottieSource
+  {
+    set => SetValue(LoadingLottieSourceProperty, value);
+    get => GetValue(LoadingLottieSourceProperty) as SKLottieImageSource;
+  }
+  /// <summary>
+  /// LoadingLottieSource bindable property.
+  /// </summary>
+  public readonly BindableProperty LoadingLottieSourceProperty = BindableProperty.Create(nameof(LoadingLottieSource), typeof(SKLottieImageSource), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the image source for when an exception is thrown while loading.
   /// </summary>
-  public SKLottieImageSource? ErrorLottieSource { get; set; }
+  public SKLottieImageSource? ErrorLottieSource
+  {
+    set => SetValue(ErrorLottieSourceProperty, value);
+    get => GetValue(ErrorLottieSourceProperty) as SKLottieImageSource;
+  }
+  /// <summary>
+  /// ErrorLottieSource bindable property.
+  /// </summary>
+  public readonly BindableProperty ErrorLottieSourceProperty = BindableProperty.Create(nameof(ErrorLottieSource), typeof(SKLottieImageSource), typeof(LoadingView));
+
+  /// <summary>
+  /// Gets or sets the view's title.
+  /// </summary>
+  public string? Title
+  {
+    set => SetValue(TitleProperty, value);
+    get => GetValue(TitleProperty) as string;
+  }
+  /// <summary>
+  /// Title bindable property.
+  /// </summary>
+  public readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(LoadingView));
+
+  /// <summary>
+  /// Gets or sets the view's text.
+  /// </summary>
+  public string? Text
+  {
+    set => SetValue(TextProperty, value);
+    get => GetValue(TextProperty) as string;
+  }
+  /// <summary>
+  /// Text bindable property.
+  /// </summary>
+  public readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the title for when the view is loading.
   /// </summary>
-  public string? LoadingTitle { get; set; }
+  public string? LoadingTitle
+  {
+    set => SetValue(LoadingTitleProperty, value);
+    get => GetValue(LoadingTitleProperty) as string;
+  }
+  /// <summary>
+  /// LoadingTitle bindable property.
+  /// </summary>
+  public readonly BindableProperty LoadingTitleProperty = BindableProperty.Create(nameof(LoadingTitle), typeof(string), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the text for when the view is loading.
   /// </summary>
-  public string? LoadingText { get; set; }
+  public string? LoadingText
+  {
+    set => SetValue(LoadingTextProperty, value);
+    get => GetValue(LoadingTextProperty) as string;
+  }
+  /// <summary>
+  /// LoadingText bindable property.
+  /// </summary>
+  public readonly BindableProperty LoadingTextProperty = BindableProperty.Create(nameof(LoadingText), typeof(string), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the title for when the view throws an exception.
   /// </summary>
-  public string? ErrorTitle { get; set; }
+  public string? ErrorTitle
+  {
+    set => SetValue(ErrorTitleProperty, value);
+    get => GetValue(ErrorTitleProperty) as string;
+  }
+  /// <summary>
+  /// ErrorTitle bindable property.
+  /// </summary>
+  public readonly BindableProperty ErrorTitleProperty = BindableProperty.Create(nameof(ErrorTitle), typeof(string), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the text for when the view throws an exception. Can use string.Format with the following indexes:
   /// 0: The exception type;
   /// 1: The exception message.
   /// </summary>
-  public string? ErrorText { get; set; }
-
+  public string? ErrorText
+  {
+    set => SetValue(ErrorTextProperty, value);
+    get => GetValue(ErrorTextProperty) as string;
+  }
   /// <summary>
-  /// Number of times that the loading lottie has to repeat. Is -1 by default to signal an infinite loop.
+  /// ErrorText bindable property.
   /// </summary>
-  public int LoadingLottieRepeat { get; set; } = -1;
-
-  /// <summary>
-  /// Number of times that the error lottie has to repeat. Is 0 by default to fire only once.
-  /// </summary>
-  public int ErrorLottieRepeat { get; set; } = 0;
+  public readonly BindableProperty ErrorTextProperty = BindableProperty.Create(nameof(ErrorText), typeof(string), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the retry button's text.
   /// </summary>
   public string? ButtonText
   {
-    set => ButtonRetry.Text = value;
-    get => ButtonRetry.Text;
+    set => SetValue(ButtonTextProperty, value);
+    get => GetValue(ButtonTextProperty) as string;
   }
+  /// <summary>
+  /// ButtonText bindable property.
+  /// </summary>
+  public readonly BindableProperty ButtonTextProperty = BindableProperty.Create(nameof(ButtonText), typeof(string), typeof(LoadingView));
+
+  /// <summary>
+  /// Gets or sets the lottie's repeat count.
+  /// </summary>
+  public int LottieRepeat
+  {
+    set => SetValue(LottieRepeatProperty, value);
+    get => (int)GetValue(LottieRepeatProperty);
+  }
+  /// <summary>
+  /// LottieRepeat bindable property.
+  /// </summary>
+  public readonly BindableProperty LottieRepeatProperty = BindableProperty.Create(nameof(LottieRepeat), typeof(int), typeof(LoadingView));
+
+  /// <summary>
+  /// Number of times that the loading lottie has to repeat.
+  /// </summary>
+  public int LoadingLottieRepeat
+  {
+    set => SetValue(LoadingLottieRepeatProperty, value);
+    get => (int)GetValue(LoadingLottieRepeatProperty);
+  }
+  /// <summary>
+  /// LoadingLottieRepeat bindable property.
+  /// </summary>
+  public readonly BindableProperty LoadingLottieRepeatProperty = BindableProperty.Create(nameof(LoadingLottieRepeat), typeof(int), typeof(LoadingView));
+
+  /// <summary>
+  /// Number of times that the error lottie has to repeat.
+  /// </summary>
+  public int ErrorLottieRepeat
+  {
+    set => SetValue(ErrorLottieRepeatProperty, value);
+    get => (int)GetValue(ErrorLottieRepeatProperty);
+  }
+  /// <summary>
+  /// ErrorLottieRepeat bindable property.
+  /// </summary>
+  public readonly BindableProperty ErrorLottieRepeatProperty = BindableProperty.Create(nameof(ErrorLottieRepeat), typeof(int), typeof(LoadingView));
 
   // METHODS
 
@@ -129,10 +262,10 @@ public partial class LoadingView : ContentView
     {
       MainThread.BeginInvokeOnMainThread(() =>
       {
-        LottieView.Source = ErrorLottieSource;
-        LottieView.RepeatCount = ErrorLottieRepeat;
-        LabelTitle.Text = ErrorTitle;
-        LabelDetail.Text = ErrorText is null ? "" : string.Format(ErrorText, e.GetType(), e.Message);
+        LottieSource = ErrorLottieSource;
+        LottieRepeat = ErrorLottieRepeat;
+        Title = ErrorTitle;
+        Text = ErrorText is null ? "" : string.Format(ErrorText, e.GetType(), e.Message);
         ButtonRetry.IsVisible = true;
         OnException?.Invoke(this, e);
       });
@@ -155,10 +288,10 @@ public partial class LoadingView : ContentView
   {
     MainThread.BeginInvokeOnMainThread(() =>
     {
-      LottieView.Source = LoadingLottieSource;
-      LottieView.RepeatCount = LoadingLottieRepeat;
-      LabelTitle.Text = LoadingTitle;
-      LabelDetail.Text = LoadingText;
+      LottieSource = LoadingLottieSource;
+      LottieRepeat = LoadingLottieRepeat;
+      Title = LoadingTitle;
+      Text = LoadingText;
       ButtonRetry.IsVisible = false;
       on_reset?.Invoke(this);
     });

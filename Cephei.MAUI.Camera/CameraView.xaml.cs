@@ -14,7 +14,8 @@ public partial class CameraView : ContentView, IDrawable
   public CameraView()
   {
     InitializeComponent();
-    CameraView.BarcodeDetected += CameraView_BarcodeDetected;
+    BindingContext = this;
+    CameraViw.BarcodeDetected += CameraViw_BarcodeDetected;
     GraphicsOverlay.Drawable = this;
   }
 
@@ -58,38 +59,48 @@ public partial class CameraView : ContentView, IDrawable
   /// <summary>
   /// Gets the camera that is performing the scanning.
   /// </summary>
-  public CameraInfo Camera => CameraView.Camera;
+  public CameraInfo Camera => CameraViw.Camera;
 
   /// <summary>
   /// Gets or sets the overlay color. Default is transparent black.
   /// </summary>
   public Color OverlayColor
   {
-    set
-    {
-      color_over = value;
-      GraphicsOverlay.Invalidate();
-    }
-    get => color_over;
+    set => SetValue(OverlayColorProperty, value);
+    get => (Color)GetValue(OverlayColorProperty);
   }
+  /// <summary>
+  /// The OverlayColor property.
+  /// </summary>
+  public static readonly BindableProperty OverlayColorProperty 
+    = BindableProperty.Create(nameof(OverlayColor), typeof(Color), typeof(CameraView), new Color(0, 0, 0, 120), propertyChanged:OnGraphicsOverlayChange);
 
   /// <summary>
   /// Gets or sets the overlay corner color. Default is white.
   /// </summary>
   public Color OverlayCornerColor
   {
-    set
-    {
-      color_line = value;
-      GraphicsOverlay.Invalidate();
-    }
-    get => color_line;
+    set => SetValue(OverlayCornerColorProperty, value);
+    get => (Color)GetValue(OverlayCornerColorProperty);
   }
+  /// <summary>
+  /// The OverlayCornerColor property.
+  /// </summary>
+  public static readonly BindableProperty OverlayCornerColorProperty 
+    = BindableProperty.Create(nameof(OverlayCornerColor), typeof(Color), typeof(CameraView), new Color(1f), propertyChanged:OnGraphicsOverlayChange);
 
   /// <summary>
   /// Specifies the camera type that will be used by this CameraView (if it is a front or back camera).
   /// </summary>
-  public CameraType CameraType { set; get; } = CameraType.Any;
+  public CameraType CameraType
+  {
+    set => SetValue(CameraTypeProperty, value);
+    get => (CameraType)GetValue(CameraTypeProperty);
+  }
+  /// <summary>
+  /// The CameraType property.
+  /// </summary>
+  public static readonly BindableProperty CameraTypeProperty = BindableProperty.Create(nameof(CameraType), typeof(CameraType), typeof(CameraView), CameraType.Any);
 
   /// <summary>
   /// Gets or sets the camera's width.
@@ -97,14 +108,14 @@ public partial class CameraView : ContentView, IDrawable
   /// <remarks>Must be set or the application will silently crash.</remarks>
   public double CameraWidth
   {
-    set
-    {
-      CameraView.WidthRequest = value;
-      GraphicsOverlay.WidthRequest = value;
-      GraphicsOverlay.Invalidate();
-    }
-    get => CameraView.WidthRequest;
+    set => SetValue(CameraWidthProperty, value);
+    get => (double)GetValue(CameraWidthProperty);
   }
+  /// <summary>
+  /// The CameraWidth property.
+  /// </summary>
+  public static readonly BindableProperty CameraWidthProperty 
+    = BindableProperty.Create(nameof(CameraWidth), typeof(double), typeof(CameraView), propertyChanged:OnGraphicsOverlayChange);
 
   /// <summary>
   /// Gets or sets the camera's height.
@@ -112,116 +123,140 @@ public partial class CameraView : ContentView, IDrawable
   /// <remarks>Must be set or the application will silently crash.</remarks>
   public double CameraHeight
   {
-    set
-    {
-      CameraView.HeightRequest = value;
-      GraphicsOverlay.HeightRequest = value;
-      GraphicsOverlay.Invalidate();
-    }
-    get => CameraView.HeightRequest;
+    set => SetValue(CameraHeightProperty, value);
+    get => (double)GetValue(CameraHeightProperty);
   }
+  /// <summary>
+  /// The CameraHeight property.
+  /// </summary>
+  public static readonly BindableProperty CameraHeightProperty 
+    = BindableProperty.Create(nameof(CameraHeight), typeof(double), typeof(CameraView), propertyChanged:OnGraphicsOverlayChange);
 
   /// <summary>
   /// Gets or sets the overlay's uncovered width. Setting it to 0 or less will disable the overlay.
   /// </summary>
   public float OverlayWidth
   {
-    set
-    {
-      over_w = value;
-      GraphicsOverlay.Invalidate();
-    }
-    get => over_w;
+    set => SetValue(OverlayWidthProperty, value);
+    get => (float)GetValue(OverlayWidthProperty);
   }
+  /// <summary>
+  /// The OverlayWidth property.
+  /// </summary>
+  public static readonly BindableProperty OverlayWidthProperty 
+    = BindableProperty.Create(nameof(OverlayWidth), typeof(float), typeof(CameraView), propertyChanged:OnGraphicsOverlayChange);
 
   /// <summary>
   /// Gets or sets the overlay's uncovered height. Setting it to 0 or less will disable the overlay.
   /// </summary>
   public float OverlayHeight
   {
-    set
-    {
-      over_h = value;
-      GraphicsOverlay.Invalidate();
-    }
-    get => over_h;
+    set => SetValue(OverlayHeightProperty, value);
+    get => (float)GetValue(OverlayHeightProperty);
   }
+  /// <summary>
+  /// The OverlayHeight property.
+  /// </summary>
+  public static readonly BindableProperty OverlayHeightProperty 
+    = BindableProperty.Create(nameof(OverlayHeight), typeof(float), typeof(CameraView), propertyChanged:OnGraphicsOverlayChange);
 
   /// <summary>
-  /// Gets or sets the overlay's corner width. Default is 16.
+  /// Gets or sets the overlay's corner width.
   /// </summary>
   public float OverlayCornerWidth
   {
-    set
-    {
-      corner_w = value;
-      GraphicsOverlay.Invalidate();
-    }
-    get => corner_w;
+    set => SetValue(OverlayCornerWidthProperty, value);
+    get => (float)GetValue(OverlayCornerWidthProperty);
   }
+  /// <summary>
+  /// The OverlayCornerWidth property.
+  /// </summary>
+  public static readonly BindableProperty OverlayCornerWidthProperty 
+    = BindableProperty.Create(nameof(OverlayCornerWidth), typeof(float), typeof(CameraView), propertyChanged: OnGraphicsOverlayChange);
 
   /// <summary>
   /// Gets or sets the overlay's corner height. Default is 16.
   /// </summary>
   public float OverlayCornerHeight
   {
-    set
-    {
-      corner_h = value;
-      GraphicsOverlay.Invalidate();
-    }
-    get => corner_h;
+    set => SetValue(OverlayCornerHeightProperty, value);
+    get => (float)GetValue(OverlayCornerHeightProperty);
   }
-
   /// <summary>
-  /// Gets or sets the overlay's corner size. Setting this overrides both corner width and height.
+  /// The OverlayCornerHeight property.
   /// </summary>
-  public float OverlayCornerSize
-  {
-    set
-    {
-      corner_w = value * 0.5f;
-      OverlayCornerHeight = corner_w;
-    }
-    get => OverlayCornerWidth + OverlayCornerHeight;
-  }
+  public static readonly BindableProperty OverlayCornerHeightProperty 
+    = BindableProperty.Create(nameof(OverlayCornerHeight), typeof(float), typeof(CameraView), propertyChanged: OnGraphicsOverlayChange);
 
   /// <summary>
   /// Gets or sets the overlay's corner thickness. Default is 4.
   /// </summary>
   public float OverlayCornerThickness
   {
-    set
-    {
-      corner_t = value;
-      GraphicsOverlay.Invalidate();
-    }
-    get => corner_t;
+    set => SetValue(OverlayCornerThicknessProperty, value);
+    get => (float)GetValue(OverlayCornerThicknessProperty);
   }
+  /// <summary>
+  /// The OverlayCornerThickness property.
+  /// </summary>
+  public static readonly BindableProperty OverlayCornerThicknessProperty 
+    = BindableProperty.Create(nameof(OverlayCornerThickness), typeof(float), typeof(CameraView), propertyChanged: OnGraphicsOverlayChange);
 
   /// <summary>
   /// Determines the camera's detection cooldown (in miliseconds).
   /// </summary>
-  public int DetectionCooldown { get; set; } = 5000;
+  public int DetectionCooldown
+  {
+    set => SetValue(DetectionCooldownProperty, value);
+    get => (int)GetValue(DetectionCooldownProperty);
+  }
+  /// <summary>
+  /// The DetectionCooldown property.
+  /// </summary>
+  public static readonly BindableProperty DetectionCooldownProperty = BindableProperty.Create(nameof(DetectionCooldown), typeof(int), typeof(CameraView), 5000);
 
   /// <summary>
   /// Should the camera automatically start when the device's cameras are loaded?
   /// </summary>
-  public bool AutoStart { get; set; } = true;
+  public bool AutoStart
+  {
+    set => SetValue(AutoStartProperty, value);
+    get => (bool)GetValue(AutoStartProperty);
+  }
+  /// <summary>
+  /// The AutoStart property.
+  /// </summary>
+  public static readonly BindableProperty AutoStartProperty = BindableProperty.Create(nameof(AutoStart), typeof(bool), typeof(CameraView), true);
 
   /// <summary>
   /// Keep the screen on while the camera is active?
   /// </summary>
-  public bool KeepScreenOn { get; set; } = true;
+  public bool KeepScreenOn
+  {
+    set => SetValue(KeepScreenOnProperty, value);
+    get => (bool)GetValue(KeepScreenOnProperty);
+  }
+  /// <summary>
+  /// The KeepScreenOn property.
+  /// </summary>
+  public static readonly BindableProperty KeepScreenOnProperty = BindableProperty.Create(nameof(KeepScreenOn), typeof(bool), typeof(CameraView));
 
   /// <summary>
   /// Enables or disables the camera's barcode scanning.
   /// </summary>
   public bool BarcodeScanning
   {
-    set => CameraView.BarCodeDetectionEnabled = value;
-    get => CameraView.BarCodeDetectionEnabled;
+    set
+    {
+      SetValue(BarcodeScanningProperty, value);
+      CameraViw.BarCodeDetectionEnabled = value;
+    }
+    get => (bool)GetValue(BarcodeScanningProperty);
   }
+  /// <summary>
+  /// The BarcodeScanning property.
+  /// </summary>
+  public static readonly BindableProperty BarcodeScanningProperty = BindableProperty.Create(nameof(BarcodeScanning), typeof(bool), typeof(CameraView));
 
   // METHODS
 
@@ -231,8 +266,8 @@ public partial class CameraView : ContentView, IDrawable
   /// <exception cref="CameraOperationException"></exception>
   public async Task StartAsync()
   {
-    if (CameraView.Camera is null) return;
-    HandleCameraResult(await CameraView.StartCameraAsync());
+    if (CameraViw.Camera is null) return;
+    HandleCameraResult(await CameraViw.StartCameraAsync());
     if (KeepScreenOn) DeviceDisplay.Current.KeepScreenOn = true;
     string prev = previous;
     await Task.Delay(DetectionCooldown);
@@ -245,8 +280,8 @@ public partial class CameraView : ContentView, IDrawable
   /// <exception cref="CameraOperationException"></exception>
   public async Task StopAsync()
   {
-    if (CameraView.Camera is null) return;
-    HandleCameraResult(await CameraView.StopCameraAsync());
+    if (CameraViw.Camera is null) return;
+    HandleCameraResult(await CameraViw.StopCameraAsync());
     if (KeepScreenOn) DeviceDisplay.Current.KeepScreenOn = false;
   }
 
@@ -256,23 +291,9 @@ public partial class CameraView : ContentView, IDrawable
 
   // FIELDS
 
-  private Color color_over = new(0, 0, 0, 120);
-  private Color color_line = new(1f);
   private string previous = "";
-  private float over_w = 0f, over_h = 0f;
-  private float corner_w = 16f, corner_h = 16f, corner_t = 4f;
 
   // METHODS
-
-  #endregion
-
-  #region private static
-
-  private static void DrawCorner(ICanvas canvas, float x, float y, float width, float height)
-  {
-    canvas.DrawLine(x, y, x + width, y);
-    canvas.DrawLine(x, y, x, y + height);
-  }
 
   private void InvokeCameraNotFound(CameraType type)
   {
@@ -286,14 +307,14 @@ public partial class CameraView : ContentView, IDrawable
     throw new CameraOperationException(this, result);
   }
 
-  private async void CameraView_CamerasLoaded(object sender, EventArgs e)
+  private async void CameraViw_CamerasLoaded(object sender, EventArgs e)
   {
-    if (CameraView.NumCamerasDetected < 1)
+    if (CameraViw.NumCamerasDetected < 1)
     {
       InvokeCameraNotFound(CameraType);
       return;
     }
-    if (CameraType == CameraType.Any) CameraView.Camera = CameraView.Cameras.FirstOrDefault();
+    if (CameraType == CameraType.Any) CameraViw.Camera = CameraViw.Cameras.FirstOrDefault();
     else
     {
       CameraPosition pos = CameraType switch
@@ -302,14 +323,14 @@ public partial class CameraView : ContentView, IDrawable
         CameraType.Back => CameraPosition.Back,
         _ => CameraPosition.Unknow
       };
-      foreach (CameraInfo cam in CameraView.Cameras)
+      foreach (CameraInfo cam in CameraViw.Cameras)
       {
         if (cam.Position != pos) continue;
-        CameraView.Camera = cam;
+        CameraViw.Camera = cam;
         break;
       }
     }
-    if (CameraView.Camera is null)
+    if (CameraViw.Camera is null)
     {
       InvokeCameraNotFound(CameraType);
       return;
@@ -317,13 +338,25 @@ public partial class CameraView : ContentView, IDrawable
     if (AutoStart) await StartAsync();
   }
 
-  private void CameraView_BarcodeDetected(object sender, BarcodeEventArgs args)
+  private void CameraViw_BarcodeDetected(object sender, BarcodeEventArgs args)
   {
-    string res = CameraView.BarCodeResults[0].Text;
+    string res = CameraViw.BarCodeResults[0].Text;
     if (res.Equals(previous)) return;
     previous = res;
     OnBarcodeDetected?.Invoke(this, res);
   }
+
+  #endregion
+
+  #region private static
+
+  private static void DrawCorner(ICanvas canvas, float x, float y, float width, float height)
+  {
+    canvas.DrawLine(x, y, x + width, y);
+    canvas.DrawLine(x, y, x, y + height);
+  }
+
+  private static void OnGraphicsOverlayChange(BindableObject obj, object o, object n) => ((CameraView)obj).GraphicsOverlay?.Invalidate();
 
   #endregion
 }

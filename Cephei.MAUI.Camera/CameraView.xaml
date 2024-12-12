@@ -5,7 +5,7 @@
              x:Class="Cephei.MAUI.Camera.CameraView">
 
   <AbsoluteLayout HorizontalOptions="Center">
-    <camera:CameraView x:Name="CameraView" CamerasLoaded="CameraView_CamerasLoaded"/>
-    <GraphicsView x:Name="GraphicsOverlay"/>
+    <camera:CameraView x:Name="CameraViw" WidthRequest="{Binding CameraWidth}" HeightRequest="{Binding CameraHeight}" CamerasLoaded="CameraViw_CamerasLoaded"/>
+    <GraphicsView WidthRequest="{Binding CameraWidth}" HeightRequest="{Binding CameraHeight}" x:Name="GraphicsOverlay"/>
   </AbsoluteLayout>
 </ContentView>

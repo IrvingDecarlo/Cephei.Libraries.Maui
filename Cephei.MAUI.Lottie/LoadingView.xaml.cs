@@ -48,7 +48,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// StyleTitle bindable property.
   /// </summary>
-  public readonly BindableProperty StyleTitleProperty = BindableProperty.Create(nameof(StyleTitle), typeof(Style), typeof(LoadingView));
+  public static readonly BindableProperty StyleTitleProperty = BindableProperty.Create(nameof(StyleTitle), typeof(Style), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the text's style.
@@ -61,7 +61,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// StyleText bindable property.
   /// </summary>
-  public readonly BindableProperty StyleTextProperty = BindableProperty.Create(nameof(StyleText), typeof(Style), typeof(LoadingView));
+  public static readonly BindableProperty StyleTextProperty = BindableProperty.Create(nameof(StyleText), typeof(Style), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the retry button's style.
@@ -74,7 +74,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// StyleButton bindable property.
   /// </summary>
-  public readonly BindableProperty StyleButtonProperty = BindableProperty.Create(nameof(StyleButton), typeof(Style), typeof(LoadingView));
+  public static readonly BindableProperty StyleButtonProperty = BindableProperty.Create(nameof(StyleButton), typeof(Style), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the current lottie source.
@@ -87,7 +87,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// LottieSource bindable property.
   /// </summary>
-  public readonly BindableProperty LottieSourceProperty = BindableProperty.Create(nameof(LottieSource), typeof(SKLottieImageSource), typeof(LoadingView));
+  public static readonly BindableProperty LottieSourceProperty = BindableProperty.Create(nameof(LottieSource), typeof(SKLottieImageSource), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the image source for when the view is loading.
@@ -100,7 +100,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// LoadingLottieSource bindable property.
   /// </summary>
-  public readonly BindableProperty LoadingLottieSourceProperty = BindableProperty.Create(nameof(LoadingLottieSource), typeof(SKLottieImageSource), typeof(LoadingView));
+  public static readonly BindableProperty LoadingLottieSourceProperty = BindableProperty.Create(nameof(LoadingLottieSource), typeof(SKLottieImageSource), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the image source for when an exception is thrown while loading.
@@ -113,7 +113,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// ErrorLottieSource bindable property.
   /// </summary>
-  public readonly BindableProperty ErrorLottieSourceProperty = BindableProperty.Create(nameof(ErrorLottieSource), typeof(SKLottieImageSource), typeof(LoadingView));
+  public static readonly BindableProperty ErrorLottieSourceProperty = BindableProperty.Create(nameof(ErrorLottieSource), typeof(SKLottieImageSource), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the view's title.
@@ -126,7 +126,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// Title bindable property.
   /// </summary>
-  public readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(LoadingView));
+  public static readonly BindableProperty TitleProperty = BindableProperty.Create(nameof(Title), typeof(string), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the view's text.
@@ -139,7 +139,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// Text bindable property.
   /// </summary>
-  public readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(LoadingView));
+  public static readonly BindableProperty TextProperty = BindableProperty.Create(nameof(Text), typeof(string), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the title for when the view is loading.
@@ -152,7 +152,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// LoadingTitle bindable property.
   /// </summary>
-  public readonly BindableProperty LoadingTitleProperty = BindableProperty.Create(nameof(LoadingTitle), typeof(string), typeof(LoadingView));
+  public static readonly BindableProperty LoadingTitleProperty = BindableProperty.Create(nameof(LoadingTitle), typeof(string), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the text for when the view is loading.
@@ -165,7 +165,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// LoadingText bindable property.
   /// </summary>
-  public readonly BindableProperty LoadingTextProperty = BindableProperty.Create(nameof(LoadingText), typeof(string), typeof(LoadingView));
+  public static readonly BindableProperty LoadingTextProperty = BindableProperty.Create(nameof(LoadingText), typeof(string), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the title for when the view throws an exception.
@@ -178,7 +178,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// ErrorTitle bindable property.
   /// </summary>
-  public readonly BindableProperty ErrorTitleProperty = BindableProperty.Create(nameof(ErrorTitle), typeof(string), typeof(LoadingView));
+  public static readonly BindableProperty ErrorTitleProperty = BindableProperty.Create(nameof(ErrorTitle), typeof(string), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the text for when the view throws an exception. Can use string.Format with the following indexes:
@@ -193,7 +193,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// ErrorText bindable property.
   /// </summary>
-  public readonly BindableProperty ErrorTextProperty = BindableProperty.Create(nameof(ErrorText), typeof(string), typeof(LoadingView));
+  public static readonly BindableProperty ErrorTextProperty = BindableProperty.Create(nameof(ErrorText), typeof(string), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the retry button's text.
@@ -206,7 +206,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// ButtonText bindable property.
   /// </summary>
-  public readonly BindableProperty ButtonTextProperty = BindableProperty.Create(nameof(ButtonText), typeof(string), typeof(LoadingView));
+  public static readonly BindableProperty ButtonTextProperty = BindableProperty.Create(nameof(ButtonText), typeof(string), typeof(LoadingView));
 
   /// <summary>
   /// Gets or sets the lottie's repeat count.
@@ -219,7 +219,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// LottieRepeat bindable property.
   /// </summary>
-  public readonly BindableProperty LottieRepeatProperty = BindableProperty.Create(nameof(LottieRepeat), typeof(int), typeof(LoadingView));
+  public static readonly BindableProperty LottieRepeatProperty = BindableProperty.Create(nameof(LottieRepeat), typeof(int), typeof(LoadingView));
 
   /// <summary>
   /// Number of times that the loading lottie has to repeat.
@@ -232,7 +232,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// LoadingLottieRepeat bindable property.
   /// </summary>
-  public readonly BindableProperty LoadingLottieRepeatProperty = BindableProperty.Create(nameof(LoadingLottieRepeat), typeof(int), typeof(LoadingView));
+  public static readonly BindableProperty LoadingLottieRepeatProperty = BindableProperty.Create(nameof(LoadingLottieRepeat), typeof(int), typeof(LoadingView));
 
   /// <summary>
   /// Number of times that the error lottie has to repeat.
@@ -245,7 +245,7 @@ public partial class LoadingView : ContentView
   /// <summary>
   /// ErrorLottieRepeat bindable property.
   /// </summary>
-  public readonly BindableProperty ErrorLottieRepeatProperty = BindableProperty.Create(nameof(ErrorLottieRepeat), typeof(int), typeof(LoadingView));
+  public static readonly BindableProperty ErrorLottieRepeatProperty = BindableProperty.Create(nameof(ErrorLottieRepeat), typeof(int), typeof(LoadingView));
 
   // METHODS
 

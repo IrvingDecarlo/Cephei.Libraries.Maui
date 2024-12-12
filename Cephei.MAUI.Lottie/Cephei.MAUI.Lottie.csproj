@@ -21,8 +21,13 @@
 		<Authors>Irving Decarlo</Authors>
 		<Company>Cephei</Company>
 		<Product>$(Title)</Product>
-		<PackageReleaseNotes>v1, 24-12-04
+		<PackageReleaseNotes>v1.0.0.1, 24-12-12
+* LoadingView
+*+ All of the loading view's properties are now bindable.
+
+v1, 24-12-04
 Initial release.</PackageReleaseNotes>
+		<Version>1.0.0.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>

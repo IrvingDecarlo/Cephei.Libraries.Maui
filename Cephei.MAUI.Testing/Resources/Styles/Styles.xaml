@@ -436,8 +436,15 @@
   </Style>
 
   <Style TargetType="lottie:LoadingView">
-    <!-- None of the LoadingView's custom properties are appearing as suggestions in Visual Studio -->
-    <Setter Property="LoadingTitle" Value="trash"/>
+    <Setter Property="StyleTitle" Value="{StaticResource SubHeadline}"/>
+    <Setter Property="LoadingLottieSource" Value="Lottie\loading.json"/>
+    <Setter Property="LoadingLottieRepeat" Value="-1"/>
+    <Setter Property="LoadingTitle" Value="Loading"/>
+    <Setter Property="LoadingText" Value="Please wait..."/>
+    <Setter Property="ErrorLottieSource" Value="Lottie\error.json"/>
+    <Setter Property="ErrorLottieRepeat" Value="0"/>
+    <Setter Property="ErrorTitle" Value="Error"/>
+    <Setter Property="ErrorText" Value="Error while loading: {0}"/>
   </Style>
 
 </ResourceDictionary>

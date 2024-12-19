@@ -49,6 +49,7 @@ jobs:
           MODIFIED_PROJECTS=$(echo ${{ steps.modified-projects.outputs.modified-files }} | tr ',' '\n')
           for project in $MODIFIED_PROJECTS; do
             echo -e "\033[35mBuilding and packing project: $project\033[0m"
+            dotnet workload restore $project
             if dotnet pack --configuration Release --output ./nupkg $project; then
               echo -e "\033[32mProject $project packed successfully.\033[0m"
             else

@@ -20,7 +20,7 @@ on:
 
 jobs:
   publish:
-    runs-on: windows-latest
+    runs-on: macos-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

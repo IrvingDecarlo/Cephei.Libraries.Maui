@@ -1,3 +1,6 @@
+> [!NOTE]
+> As of December 23rd 2024, all of this repository's projects are automatically published to NuGet (https://www.nuget.org/profiles/IrvingDecarlo).
+
 Cephei .Net MAUI Libraries,
 created and maintained by Irving Decarlo.
 

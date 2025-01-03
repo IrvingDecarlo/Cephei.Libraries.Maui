@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:lottie="clr-namespace:Cephei.MAUI.Lottie;assembly=Cephei.MAUI.Lottie"
     xmlns:camera="clr-namespace:Cephei.MAUI.Camera;assembly=Cephei.MAUI.Camera"
+    xmlns:base="clr-namespace:Cephei.MAUI;assembly=Cephei.MAUI"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
   <Style TargetType="ActivityIndicator">
@@ -445,6 +446,22 @@
     <Setter Property="ErrorLottieRepeat" Value="0"/>
     <Setter Property="ErrorTitle" Value="Error"/>
     <Setter Property="ErrorText" Value="Error while loading: {0}"/>
+  </Style>
+
+  <Style TargetType="base:KeyValueLabel">
+    <Setter Property="LabelStyle" Value="{StaticResource SubHeadline}"/>
+    <Setter Property="KeyText" Value="key test"/>
+    <Setter Property="ValueText" Value="value test"/>
+  </Style>
+
+  <Style TargetType="base:LabeledEntry">
+    <Setter Property="LabelStyle" Value="{StaticResource SubHeadline}"/>
+    <Setter Property="Label" Value="label test"/>
+    <Setter Property="Text" Value="entry text"/>
+    <Setter Property="Placeholder" Value="placeholder"/>
+    <Setter Property="MaxLength" Value="16"/>
+    <Setter Property="Spacing" Value="-4"/>
+    <Setter Property="IsPassword" Value="True"/>
   </Style>
 
 </ResourceDictionary>

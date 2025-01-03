@@ -21,12 +21,38 @@
 		<Authors>Irving Decarlo</Authors>
 		<Company>Cephei</Company>
 		<Product>$(Title)</Product>
-		<PackageReleaseNotes></PackageReleaseNotes>
+		<PackageReleaseNotes>v1, 25-01-02
+		* Initial release.</PackageReleaseNotes>
+		<Description>MAUI library for Camera usage (uses Camera.MAUI).</Description>
+		<Copyright>Copyright (c) Irving Decarlo 2025</Copyright>
+		<PackageProjectUrl>https://github.com/IrvingDecarlo/Cephei.MAUI</PackageProjectUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<RepositoryUrl>https://github.com/IrvingDecarlo/Cephei.MAUI</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageTags>maui</PackageTags>
+		<PackageIcon>icon-128x.png</PackageIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
+		<None Include="..\icon-128x.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="KeyValueLabel.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="LabeledEntry.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

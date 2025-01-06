@@ -247,6 +247,32 @@ public partial class LoadingView : ContentView
   /// </summary>
   public static readonly BindableProperty ErrorLottieRepeatProperty = BindableProperty.Create(nameof(ErrorLottieRepeat), typeof(int), typeof(LoadingView));
 
+  /// <summary>
+  /// Determines the lottie view's width.
+  /// </summary>
+  public int LottieWidth
+  {
+    set => SetValue(LottieWidthProperty, value);
+    get => (int)GetValue(LottieWidthProperty);
+  }
+  /// <summary>
+  /// LottieWidth bindable property.
+  /// </summary>
+  public static readonly BindableProperty LottieWidthProperty = BindableProperty.Create(nameof(LottieWidth), typeof(int), typeof(LoadingView));
+
+  /// <summary>
+  /// Determines the lottie view's height.
+  /// </summary>
+  public int LottieHeight
+  {
+    set => SetValue(LottieHeightProperty, value);
+    get => (int)GetValue(LottieHeightProperty);
+  }
+  /// <summary>
+  /// LottieHeight bindable property.
+  /// </summary>
+  public static readonly BindableProperty LottieHeightProperty = BindableProperty.Create(nameof(LottieHeight), typeof(int), typeof(LoadingView));
+
   // METHODS
 
   /// <summary>

@@ -446,6 +446,19 @@
     <Setter Property="ErrorLottieRepeat" Value="0"/>
     <Setter Property="ErrorTitle" Value="Error"/>
     <Setter Property="ErrorText" Value="Error while loading: {0}"/>
+    <Setter Property="LottieWidth" Value="200"/>
+    <Setter Property="LottieHeight" Value="200"/>
+  </Style>
+
+  <Style TargetType="lottie:InfoView">
+    <Setter Property="StyleTitle" Value="{StaticResource SubHeadline}"/>
+    <Setter Property="LottieSource" Value="Lottie/checkmark.json"/>
+    <Setter Property="TitleText" Value="Test Title"/>
+    <Setter Property="Text" Value="Text"/>
+    <Setter Property="ButtonText" Value="Button Text"/>
+    <Setter Property="LottieHeight" Value="200"/>
+    <Setter Property="LottieWidth" Value="200"/>
+    <Setter Property="LottieRepeat" Value="2"/>
   </Style>
 
   <Style TargetType="base:KeyValueLabel">

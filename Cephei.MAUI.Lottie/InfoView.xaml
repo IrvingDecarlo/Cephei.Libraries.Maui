@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cephei.MAUI.Lottie.InfoView">
+
+  <VerticalStackLayout VerticalOptions="CenterAndExpand">
+    <skia:SKLottieView 
+      Source="{Binding LottieSource}" 
+      RepeatCount="{Binding LottieRepeat}"
+      WidthRequest="{Binding LottieWidth}" 
+      HeightRequest="{Binding LottieHeight}"/>
+    <Label Style="{Binding StyleTitle}" Text="{Binding TitleText}"/>
+    <Label Style="{Binding StyleText}" Text="{Binding Text}"/>
+    <Button Style="{Binding SyleButton}" Text="{Binding ButtonText}" Clicked="ButtonConfirm_Clicked"/>
+  </VerticalStackLayout>
+</ContentView>

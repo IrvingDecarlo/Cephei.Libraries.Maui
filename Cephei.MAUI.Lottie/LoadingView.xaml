@@ -5,7 +5,12 @@
              x:Class="Cephei.MAUI.Lottie.LoadingView">
   
   <VerticalStackLayout>
-    <skia:SKLottieView x:Name="LottieView" WidthRequest="200" HeightRequest="200" Source="{Binding LottieSource}" RepeatCount="{Binding LottieRepeat}"/>
+    <skia:SKLottieView 
+      x:Name="LottieView"
+      WidthRequest="{Binding LottieWidth}"
+      HeightRequest="{Binding LottieHeight}"
+      Source="{Binding LottieSource}"
+      RepeatCount="{Binding LottieRepeat}"/>
     <Label x:Name="LabelTitle" Style="{Binding StyleTitle}" Text="{Binding Title}"/>
     <Label x:Name="LabelDetail" Style="{Binding StyleText}" Text="{Binding Text}"/>
     <Button x:Name="ButtonRetry" Style="{Binding StyleButton}" Text="{Binding ButtonText}" IsVisible="False" Clicked="Button_Clicked"/>

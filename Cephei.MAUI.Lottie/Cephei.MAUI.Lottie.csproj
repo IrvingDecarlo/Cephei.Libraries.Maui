@@ -22,7 +22,7 @@
 		<Company>Cephei</Company>
 		<Product>$(Title)</Product>
 		<PackageReleaseNotes>
-v1.0.1, 25-01-03
+v1.0.1, 25-01-06
 + InfoView and InfoPage.
 * LoadingView
 *+ Added LottieWidth and LottieHeight properties.
@@ -33,7 +33,7 @@ v1.0.0.1, 24-12-12
 
 v1, 24-12-04
 Initial release.</PackageReleaseNotes>
-		<Version>1.0.0.1</Version>
+		<Version>1.0.1</Version>
 		<Description>MAUI library for Lottie files (uses SkiaSharp).</Description>
 		<Copyright>Copyright (c) Irving Decarlo 2024</Copyright>
 		<PackageProjectUrl>https://github.com/IrvingDecarlo/Cephei.MAUI</PackageProjectUrl>

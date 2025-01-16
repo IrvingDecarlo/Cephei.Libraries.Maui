@@ -1,8 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst;net8.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 		<UseMaui>true</UseMaui>
@@ -21,9 +20,12 @@
 		<Authors>Irving Decarlo</Authors>
 		<Company>Cephei</Company>
 		<Product>$(Title)</Product>
-		<PackageReleaseNotes>v1, 25-01-02
-		* Initial release.</PackageReleaseNotes>
-		<Description>MAUI library for Camera usage (uses Camera.MAUI).</Description>
+		<PackageReleaseNotes>v1.0.0.1, 25-01-16
++ Added Windows as a mainline platform.
+			
+v1, 25-01-02
+* Initial release.</PackageReleaseNotes>
+		<Description>MAUI library for general-use controls.</Description>
 		<Copyright>Copyright (c) Irving Decarlo 2025</Copyright>
 		<PackageProjectUrl>https://github.com/IrvingDecarlo/Cephei.MAUI</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
@@ -31,6 +33,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>maui</PackageTags>
 		<PackageIcon>icon-128x.png</PackageIcon>
+		<Version>1.0.0.1</Version>
 	</PropertyGroup>
 
 	<ItemGroup>

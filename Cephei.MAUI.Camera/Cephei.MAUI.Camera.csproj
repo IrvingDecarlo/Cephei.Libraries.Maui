@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net8.0-android;net8.0-ios;net8.0-maccatalyst;net8.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net8.0-tizen</TargetFrameworks> -->
 		<UseMaui>true</UseMaui>
@@ -21,13 +20,16 @@
 		<Authors>Irving Decarlo</Authors>
 		<Company>Cephei</Company>
 		<Product>$(Title)</Product>
-		<PackageReleaseNotes>v1.0.0.1, 24-12-12
+		<PackageReleaseNotes>v1.0.0.2, 25-01-16
++ Added Windows as a target platform.
+
+v1.0.0.1, 24-12-12
 * CameraView
 *+ All of the CameraView's properties are now bindable.
 
 v1, 24-12-03
 Initial release.</PackageReleaseNotes>
-		<Version>1.0.0.1</Version>
+		<Version>1.0.0.2</Version>
 		<Description>MAUI library for Camera usage (uses Camera.MAUI).</Description>
 		<Copyright>Copyright (c) Irving Decarlo 2024</Copyright>
 		<PackageProjectUrl>https://github.com/IrvingDecarlo/Cephei.MAUI</PackageProjectUrl>

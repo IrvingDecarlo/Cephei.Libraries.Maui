@@ -1,6 +1,6 @@
 using SkiaSharp.Extended.UI.Controls;
 
-namespace Cephei.MAUI.Testing.LottieTest;
+namespace Cephei.Maui.Testing.LottieTest;
 
 public partial class LoadPage : ContentPage
 {

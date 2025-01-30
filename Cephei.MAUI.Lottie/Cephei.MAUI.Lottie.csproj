@@ -38,9 +38,9 @@ Initial release.</PackageReleaseNotes>
 		<Version>1.0.1.1</Version>
 		<Description>MAUI library for Lottie files (uses SkiaSharp).</Description>
 		<Copyright>Copyright (c) Irving Decarlo 2024</Copyright>
-		<PackageProjectUrl>https://github.com/IrvingDecarlo/Cephei.MAUI</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/IrvingDecarlo/Cephei.Maui</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<RepositoryUrl>https://github.com/IrvingDecarlo/Cephei.MAUI</RepositoryUrl>
+		<RepositoryUrl>https://github.com/IrvingDecarlo/Cephei.Maui</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>maui,lottie</PackageTags>
 		<PackageIcon>icon-128x.png</PackageIcon>

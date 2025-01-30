@@ -1,7 +1,7 @@
 using Camera.MAUI.ZXingHelper;
 using Camera.MAUI;
 
-namespace Cephei.MAUI.Camera;
+namespace Cephei.Maui.Camera;
 
 /// <summary>
 /// The CameraView is a standardized camera view with scanning overlay.

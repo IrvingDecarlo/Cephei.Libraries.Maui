@@ -1,6 +1,6 @@
 ﻿using Camera.MAUI;
 
-namespace Cephei.MAUI.Camera
+namespace Cephei.Maui.Camera
 {
   /// <summary>
   /// The CameraOperationException is thrown when the camera attempts to perform an operation (start or stop) and it fails.

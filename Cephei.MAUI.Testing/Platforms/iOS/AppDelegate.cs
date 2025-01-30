@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace Cephei.MAUI.Testing
+namespace Cephei.Maui.Testing
 {
   [Register("AppDelegate")]
   public class AppDelegate : MauiUIApplicationDelegate

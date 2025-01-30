@@ -2,9 +2,9 @@
 <?xaml-comp compile="true" ?>
 <ResourceDictionary 
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:lottie="clr-namespace:Cephei.MAUI.Lottie;assembly=Cephei.MAUI.Lottie"
-    xmlns:camera="clr-namespace:Cephei.MAUI.Camera;assembly=Cephei.MAUI.Camera"
-    xmlns:base="clr-namespace:Cephei.MAUI;assembly=Cephei.MAUI"
+    xmlns:lottie="clr-namespace:Cephei.Maui.Lottie;assembly=Cephei.Maui.Lottie"
+    xmlns:camera="clr-namespace:Cephei.Maui.Camera;assembly=Cephei.Maui.Camera"
+    xmlns:base="clr-namespace:Cephei.Maui;assembly=Cephei.Maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
   <Style TargetType="ActivityIndicator">

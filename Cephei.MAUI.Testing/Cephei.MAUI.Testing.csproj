@@ -14,17 +14,17 @@
 		<!-- For example: <RuntimeIdentifiers>maccatalyst-x64;maccatalyst-arm64</RuntimeIdentifiers> -->
 
 		<OutputType>Exe</OutputType>
-		<RootNamespace>Cephei.MAUI.Testing</RootNamespace>
+		<RootNamespace>Cephei.Maui.Testing</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable> 
 
 		<!-- Display name -->
-		<ApplicationTitle>Cephei.MAUI.Testing</ApplicationTitle>
+		<ApplicationTitle>Cephei.Maui.Testing</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.cephei.maui.testing</ApplicationId>
+		<ApplicationId>com.companyname.cephei.Maui.testing</ApplicationId>
 
 		<!-- Versions -->
 		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
@@ -63,9 +63,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\Cephei.MAUI.Camera\Cephei.MAUI.Camera.csproj" />
-	  <ProjectReference Include="..\Cephei.MAUI.Lottie\Cephei.MAUI.Lottie.csproj" />
-	  <ProjectReference Include="..\Cephei.MAUI\Cephei.MAUI.csproj" />
+	  <ProjectReference Include="..\Cephei.Maui.Camera\Cephei.Maui.Camera.csproj" />
+	  <ProjectReference Include="..\Cephei.Maui.Lottie\Cephei.Maui.Lottie.csproj" />
+	  <ProjectReference Include="..\Cephei.Maui\Cephei.Maui.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -1,4 +1,4 @@
-﻿namespace Cephei.MAUI.Camera
+﻿namespace Cephei.Maui.Camera
 {
   /// <summary>
   /// The CameraNotFoundException is thrown when the system attempts to start a CameraView without a valid camera.

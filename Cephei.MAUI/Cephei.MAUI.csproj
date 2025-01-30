@@ -28,9 +28,9 @@ v1, 25-01-02
 * Initial release.</PackageReleaseNotes>
 		<Description>MAUI library for general-use controls.</Description>
 		<Copyright>Copyright (c) Irving Decarlo 2025</Copyright>
-		<PackageProjectUrl>https://github.com/IrvingDecarlo/Cephei.MAUI</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/IrvingDecarlo/Cephei.Maui</PackageProjectUrl>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<RepositoryUrl>https://github.com/IrvingDecarlo/Cephei.MAUI</RepositoryUrl>
+		<RepositoryUrl>https://github.com/IrvingDecarlo/Cephei.Maui</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>maui</PackageTags>
 		<PackageIcon>icon-128x.png</PackageIcon>

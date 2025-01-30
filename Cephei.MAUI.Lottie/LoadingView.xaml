@@ -2,7 +2,7 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cephei.MAUI.Lottie.LoadingView">
+             x:Class="Cephei.Maui.Lottie.LoadingView">
   
   <VerticalStackLayout>
     <skia:SKLottieView 

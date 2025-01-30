@@ -1,4 +1,4 @@
-﻿namespace Cephei.MAUI.Camera
+﻿namespace Cephei.Maui.Camera
 {
   /// <summary>
   /// The CameraType enum enumerates the different types of camera. Also includes an Any camera type.

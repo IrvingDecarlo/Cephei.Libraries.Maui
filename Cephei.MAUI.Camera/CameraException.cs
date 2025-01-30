@@ -1,4 +1,4 @@
-﻿namespace Cephei.MAUI.Camera
+﻿namespace Cephei.Maui.Camera
 {
   /// <summary>
   /// The CameraException is thrown when the camera throws any kind of exception from within its scope.

@@ -1,4 +1,4 @@
-﻿namespace Cephei.MAUI.Testing
+﻿namespace Cephei.Maui.Testing
 {
   public partial class AppShell : Shell
   {

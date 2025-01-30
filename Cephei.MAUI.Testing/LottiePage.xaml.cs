@@ -1,8 +1,8 @@
-using Cephei.MAUI.Testing.LottieTest;
-using Cephei.MAUI.Lottie;
+using Cephei.Maui.Testing.LottieTest;
+using Cephei.Maui.Lottie;
 using SkiaSharp.Extended.UI.Controls;
 
-namespace Cephei.MAUI.Testing;
+namespace Cephei.Maui.Testing;
 
 public partial class LottiePage : ContentPage
 {

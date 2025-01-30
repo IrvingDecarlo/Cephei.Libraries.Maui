@@ -1,6 +1,6 @@
 using SkiaSharp.Extended.UI.Controls;
 
-namespace Cephei.MAUI.Lottie;
+namespace Cephei.Maui.Lottie;
 
 /// <summary>
 /// Info views can display any type of message with a lottie animation and a button included.

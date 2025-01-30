@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:lottie="clr-namespace:Cephei.MAUI.Lottie;assembly=Cephei.MAUI.Lottie"
+             xmlns:lottie="clr-namespace:Cephei.Maui.Lottie;assembly=Cephei.Maui.Lottie"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cephei.MAUI.Testing.LottiePage"
+             x:Class="Cephei.Maui.Testing.LottiePage"
              Title="LottiePage">
   <VerticalStackLayout>
     <Button Text="Loading Test" Clicked="ButtonLoad_Clicked"/>

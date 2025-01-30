@@ -1,6 +1,6 @@
 ﻿using SkiaSharp.Views.Maui.Controls.Hosting;
 
-namespace Cephei.MAUI.Lottie
+namespace Cephei.Maui.Lottie
 {
   /// <summary>
   /// The LottieExtensions class contains extension methods related with Lottie views.

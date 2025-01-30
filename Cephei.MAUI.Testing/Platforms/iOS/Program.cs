@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace Cephei.MAUI.Testing
+namespace Cephei.Maui.Testing
 {
   public class Program
   {

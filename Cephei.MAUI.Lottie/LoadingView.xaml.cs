@@ -1,6 +1,6 @@
 using SkiaSharp.Extended.UI.Controls;
 
-namespace Cephei.MAUI.Lottie;
+namespace Cephei.Maui.Lottie;
 
 /// <summary>
 /// The LoadingView component is used on pages to denote that content is being loaded.

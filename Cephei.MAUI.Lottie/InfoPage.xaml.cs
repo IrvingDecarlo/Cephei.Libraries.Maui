@@ -1,6 +1,6 @@
 using SkiaSharp.Extended.UI.Controls;
 
-namespace Cephei.MAUI.Lottie;
+namespace Cephei.Maui.Lottie;
 
 /// <summary>
 /// Info pages are pages that can display any type of message.

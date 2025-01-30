@@ -2,7 +2,7 @@ using Microsoft.Maui;
 using Microsoft.Maui.Hosting;
 using System;
 
-namespace Cephei.MAUI.Testing
+namespace Cephei.Maui.Testing
 {
   internal class Program : MauiApplication
   {

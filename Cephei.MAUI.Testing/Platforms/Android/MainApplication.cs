@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace Cephei.MAUI.Testing
+namespace Cephei.Maui.Testing
 {
   [Application]
   public class MainApplication : MauiApplication

@@ -2,7 +2,7 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:camera="clr-namespace:Camera.MAUI;assembly=Camera.MAUI"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cephei.MAUI.Camera.CameraView">
+             x:Class="Cephei.Maui.Camera.CameraView">
 
   <AbsoluteLayout HorizontalOptions="Center">
     <camera:CameraView x:Name="CameraViw" WidthRequest="{Binding CameraWidth}" HeightRequest="{Binding CameraHeight}" CamerasLoaded="CameraViw_CamerasLoaded"/>

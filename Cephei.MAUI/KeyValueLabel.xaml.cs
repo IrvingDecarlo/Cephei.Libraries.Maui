@@ -1,4 +1,4 @@
-namespace Cephei.MAUI;
+namespace Cephei.Maui;
 
 /// <summary>
 /// KeyValueLabels are labels that contain a bolded key and a normal value text.

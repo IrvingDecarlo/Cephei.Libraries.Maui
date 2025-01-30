@@ -1,8 +1,8 @@
-﻿using Cephei.MAUI.Camera;
-using Cephei.MAUI.Lottie;
+﻿using Cephei.Maui.Camera;
+using Cephei.Maui.Lottie;
 using Microsoft.Extensions.Logging;
 
-namespace Cephei.MAUI.Testing
+namespace Cephei.Maui.Testing
 {
   public static class MauiProgram
   {

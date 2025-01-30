@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:camera="clr-namespace:Cephei.MAUI.Camera;assembly=Cephei.MAUI.Camera"
-             x:Class="Cephei.MAUI.Testing.CameraPage"
+             xmlns:camera="clr-namespace:Cephei.Maui.Camera;assembly=Cephei.Maui.Camera"
+             x:Class="Cephei.Maui.Testing.CameraPage"
              Title="CameraPage">
   <VerticalStackLayout>
     <camera:CameraView/>

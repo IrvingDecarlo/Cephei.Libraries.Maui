@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:base="clr-namespace:Cephei.MAUI;assembly=Cephei.MAUI"
+             xmlns:base="clr-namespace:Cephei.Maui;assembly=Cephei.Maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Cephei.MAUI.Testing.MainPage">
+             x:Class="Cephei.Maui.Testing.MainPage">
 
   <ScrollView>
     <VerticalStackLayout>

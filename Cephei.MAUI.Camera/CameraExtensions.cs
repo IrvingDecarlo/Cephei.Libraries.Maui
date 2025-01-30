@@ -1,6 +1,6 @@
 ﻿using Camera.MAUI;
 
-namespace Cephei.MAUI.Camera
+namespace Cephei.Maui.Camera
 {
   /// <summary>
   /// The CameraExtensions class contains extension methods related to MAUI cameras.

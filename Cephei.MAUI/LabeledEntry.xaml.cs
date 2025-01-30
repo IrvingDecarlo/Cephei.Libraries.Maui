@@ -1,4 +1,4 @@
-namespace Cephei.MAUI;
+namespace Cephei.Maui;
 
 /// <summary>
 /// The LabeledEntry contains a label next to the entry, specifying to the user the entry's functionality.

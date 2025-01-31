@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cephei.Maui.Lottie.LoadingView">
+  
+  <VerticalStackLayout>
+    <skia:SKLottieView 
+      x:Name="LottieView"
+      WidthRequest="{Binding LottieWidth}"
+      HeightRequest="{Binding LottieHeight}"
+      Source="{Binding LottieSource}"
+      RepeatCount="{Binding LottieRepeat}"/>
+    <Label x:Name="LabelTitle" Style="{Binding StyleTitle}" Text="{Binding Title}"/>
+    <Label x:Name="LabelDetail" Style="{Binding StyleText}" Text="{Binding Text}"/>
+    <Button x:Name="ButtonRetry" Style="{Binding StyleButton}" Text="{Binding ButtonText}" IsVisible="False" Clicked="Button_Clicked"/>
+  </VerticalStackLayout>
+</ContentView>

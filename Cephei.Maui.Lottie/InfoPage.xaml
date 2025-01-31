@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:skia="clr-namespace:SkiaSharp.Extended.UI.Controls;assembly=SkiaSharp.Extended.UI"
+             xmlns:lottie="clr-namespace:Cephei.Maui.Lottie"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cephei.Maui.Lottie.InfoPage"
+             Title="InfoPage">
+
+  <ScrollView>
+    <lottie:InfoView x:Name="View" x:FieldModifier="Public"/>
+  </ScrollView>
+</ContentPage>

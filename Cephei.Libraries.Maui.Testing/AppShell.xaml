@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Cephei.Libraries.Maui.Testing.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Cephei.Libraries.Maui.Testing"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Cephei.Libraries.Maui.Testing">
+
+  <TabBar>
+    <Tab Title="Main">
+      <ShellContent ContentTemplate="{DataTemplate local:MainPage}"/>
+    </Tab>
+    <Tab Title="Lottie">
+      <ShellContent ContentTemplate="{DataTemplate local:LottiePage}"/>
+    </Tab>
+    <Tab Title="Camera">
+      <ShellContent ContentTemplate="{DataTemplate local:CameraPage}"/>
+    </Tab>
+  </TabBar>
+
+</Shell>

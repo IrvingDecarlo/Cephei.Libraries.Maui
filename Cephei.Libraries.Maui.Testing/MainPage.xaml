@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:base="clr-namespace:Cephei.Libraries.Maui;assembly=Cephei.Libraries.Maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cephei.Libraries.Maui.Testing.MainPage">
+
+  <ScrollView>
+    <VerticalStackLayout>
+      <base:KeyValueLabel/>
+      <base:LabeledEntry/>
+    </VerticalStackLayout>
+  </ScrollView>
+
+</ContentPage>

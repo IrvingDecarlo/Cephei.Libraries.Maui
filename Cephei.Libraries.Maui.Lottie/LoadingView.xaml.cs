@@ -273,6 +273,19 @@ public partial class LoadingView : ContentView
   /// </summary>
   public static readonly BindableProperty LottieHeightProperty = BindableProperty.Create(nameof(LottieHeight), typeof(int), typeof(LoadingView));
 
+  /// <summary>
+  /// Should exceptions be handled by the loading view? It is set to true by default.
+  /// </summary>
+  public bool HandleExceptions
+  {
+    set => SetValue(HandleExceptionsProperty, value);
+    get => (bool)GetValue(HandleExceptionsProperty);
+  }
+  /// <summary>
+  /// HandleExceptions bindable property.
+  /// </summary>
+  public static readonly BindableProperty HandleExceptionsProperty = BindableProperty.Create(nameof(HandleExceptions), typeof(bool), typeof(LoadingView), true);
+
   // METHODS
 
   /// <summary>
@@ -286,6 +299,7 @@ public partial class LoadingView : ContentView
     try { await loader(this); }
     catch (Exception e)
     {
+      if (!HandleExceptions) throw;
       MainThread.BeginInvokeOnMainThread(() =>
       {
         LottieSource = ErrorLottieSource;

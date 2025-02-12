@@ -7,7 +7,11 @@ public partial class LoadPage : ContentPage
 	public LoadPage()
 	{
 		InitializeComponent();
-    LoadingView.Load(async (x) => await Task.Delay(2000));
+    LoadingView.Load(async (x) =>
+		{
+			await Task.Delay(2000);
+			throw new Exception("Test");
+		});
   }
 
   private void LoadingView_OnLoadingFinished(Lottie.LoadingView obj)
